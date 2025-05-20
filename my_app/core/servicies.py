@@ -1,8 +1,13 @@
+from datetime import date
 from typing import List
+
 from core.repository import HydrationRepository
 from core.schema import HydrationRecord, HydrationRecordCreate
-from datetime import date
-from operations.hydration_operations import calculate_total_water, generate_hydration_report
+from operations.hydration_operations import (
+    calculate_total_water,
+    generate_hydration_report,
+)
+
 
 class HydrationService:
     def __init__(self, hydration_repository: HydrationRepository):
