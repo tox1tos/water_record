@@ -1,8 +1,11 @@
-from typing import List
-from fastapi import HTTPException
-from core.servicies import HydrationService
-from core.schema import HydrationRecordCreate, HydrationRecord
 from datetime import date
+from typing import List
+
+from fastapi import HTTPException
+
+from ..core.schema import HydrationRecord, HydrationRecordCreate
+from ..core.servicies import HydrationService
+
 
 class HydrationController:
     def __init__(self, hydration_service: HydrationService):

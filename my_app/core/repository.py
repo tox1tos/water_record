@@ -1,7 +1,10 @@
-from sqlalchemy.orm import Session
-from core.models import HydrationRecord
-from core.schema import HydrationRecordCreate
 from datetime import date
+
+from sqlalchemy.orm import Session
+
+from ..core.schema import HydrationRecordCreate
+from ..operations.models import HydrationRecord
+
 
 class HydrationRepository:
     def __init__(self, db: Session):
@@ -15,4 +18,10 @@ class HydrationRepository:
         return db_record
 
     def get_records(self, start_date: date, end_date: date):
-        return self.db.query(HydrationRecord).filter(HydrationRecord.date >= start_date, HydrationRecord.date <= end_date).all()
+        return (
+            self.db.query(HydrationRecord)
+            .filter(
+                HydrationRecord.date >= start_date, HydrationRecord.date <= end_date
+            )
+            .all()
+        )

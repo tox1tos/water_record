@@ -1,0 +1,23 @@
+version: 1
+
+formatters:
+  default:
+    format: "[{asctime}] {levelname} {name}: {message}"
+    style: "{"
+    datefmt: "%H:%M:%S"
+
+handlers:
+  std:
+    class: logging.StreamHandler
+    formatter: default
+    stream: ext://sys.stderr
+  file:
+    class: logging.FileHandler
+    formatter: default
+    filename: logs/log.txt
+
+loggers:
+  root:
+    level: INFO
+    handlers: [std, file]
+    propagate: true

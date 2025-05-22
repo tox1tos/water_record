@@ -1,0 +1,119 @@
+[21:19:01] INFO my_app.setup.setup: Starting app...
+[21:19:02] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[21:19:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[21:19:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:19:02] INFO sqlalchemy.engine.Engine: PRAGMA temp.table_info("hydration_records")
+[21:19:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:19:02] INFO sqlalchemy.engine.Engine: ROLLBACK
+[21:48:58] INFO my_app.setup.setup: Starting app...
+[21:48:58] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[21:48:58] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[21:48:58] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:48:58] INFO sqlalchemy.engine.Engine: PRAGMA temp.table_info("hydration_records")
+[21:48:58] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:48:58] INFO sqlalchemy.engine.Engine: ROLLBACK
+[16:58:53] INFO my_app.setup.setup: Starting app...
+[16:58:53] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[16:58:53] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[16:58:53] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[16:58:53] INFO sqlalchemy.engine.Engine: PRAGMA temp.table_info("hydration_records")
+[16:58:53] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[16:58:53] INFO sqlalchemy.engine.Engine: ROLLBACK
+[17:18:14] INFO my_app.setup.setup: Starting app...
+[17:18:15] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[17:18:15] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[17:18:15] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+[17:18:15] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[17:18:15] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: PRAGMA temp.table_info("hydration_records")
+[17:18:15] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	username VARCHAR NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+[17:18:15] INFO sqlalchemy.engine.Engine: [no key 0.00086s] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: 
+CREATE TABLE hydration_records (
+	id INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	amount INTEGER NOT NULL, 
+	timestamp DATETIME, 
+	date DATE, 
+	glasses INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+[17:18:15] INFO sqlalchemy.engine.Engine: [no key 0.00072s] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: CREATE INDEX ix_hydration_records_id ON hydration_records (id)
+[17:18:15] INFO sqlalchemy.engine.Engine: [no key 0.00078s] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: CREATE INDEX ix_hydration_records_date ON hydration_records (date)
+[17:18:15] INFO sqlalchemy.engine.Engine: [no key 0.00051s] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: CREATE INDEX ix_hydration_records_timestamp ON hydration_records (timestamp)
+[17:18:15] INFO sqlalchemy.engine.Engine: [no key 0.00060s] ()
+[17:18:15] INFO sqlalchemy.engine.Engine: COMMIT
+[17:18:15] INFO my_app.setup.setup: Started
+[17:25:09] INFO my_app.setup.setup: Stopping app...
+[17:25:09] INFO my_app.setup.setup: Stopped
+[17:25:09] INFO root: My_message
+[17:25:09] INFO root: Information message
+[17:25:09] ERROR root: Some error
+[12:08:23] INFO my_app.setup.setup: Starting app...
+[12:08:24] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:08:24] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[12:08:24] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:08:24] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[12:08:24] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:08:24] INFO sqlalchemy.engine.Engine: COMMIT
+[12:08:24] INFO my_app.setup.setup: Started
+[12:10:58] INFO my_app.setup.setup: Stopping app...
+[12:10:58] INFO my_app.setup.setup: Stopped
+[12:10:58] INFO root: My_message
+[12:10:58] INFO root: Information message
+[12:10:58] ERROR root: Some error
+[12:47:32] INFO my_app.setup.setup: Starting app...
+[12:47:32] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:47:32] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[12:47:32] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:47:32] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[12:47:32] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:47:32] INFO sqlalchemy.engine.Engine: COMMIT
+[12:47:32] INFO my_app.setup.setup: Started
+[12:52:30] INFO my_app.setup.setup: Stopping app...
+[12:52:30] INFO my_app.setup.setup: Stopped
+[12:52:30] INFO root: My_message
+[12:52:30] INFO root: Information message
+[12:52:30] ERROR root: Some error
+[19:51:01] INFO my_app.setup.setup: Starting app...
+[19:51:02] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[19:51:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[19:51:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:51:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[19:51:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:51:02] INFO sqlalchemy.engine.Engine: COMMIT
+[19:51:02] INFO my_app.setup.setup: Started
+[19:51:15] INFO my_app.setup.setup: Stopping app...
+[19:51:15] INFO my_app.setup.setup: Stopped
+[19:51:15] INFO root: My_message
+[19:51:15] INFO root: Information message
+[19:51:15] ERROR root: Some error
+[12:18:36] INFO my_app.setup.setup: Starting app...
+[12:18:37] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:18:37] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[12:18:37] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:18:37] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[12:18:37] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:18:37] INFO sqlalchemy.engine.Engine: COMMIT
+[12:18:37] INFO my_app.setup.setup: Started
+[12:18:42] INFO my_app.setup.setup: Stopping app...
+[12:18:42] INFO my_app.setup.setup: Stopped
+[12:18:42] INFO root: My_message
+[12:18:42] INFO root: Information message
+[12:18:42] ERROR root: Some error

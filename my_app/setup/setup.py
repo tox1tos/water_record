@@ -1,23 +1,32 @@
+import logging
+import logging.config
 from contextlib import asynccontextmanager
 from typing import cast
 
+import yaml
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from my_app.core.repository import HydrationRepository
-from my_app.core.router import (
-    HydrationService,  # noqa: F811
+from ..core.repository import HydrationRepository
+from ..core.router import (
+    HydrationService,
     users_router,
 )
-from my_app.core.servicies import HydrationService  # noqa: F811
-from my_app.operations.repository import HydrationRecordRepository
-from my_app.operations.router import records_router
-from my_app.operations.service import HydrationRecordService
-from my_app.setup.database import DatabaseManager
-from my_app.setup.settings import AppSettings
+from ..core.servicies import HydrationService  # noqa: F811
+from ..operations.repository import HydrationRecordRepository
+from ..operations.router import records_router
+from ..operations.service import HydrationRecordService
+from ..setup.database import DatabaseManager
+from ..setup.settings import AppSettings
+
+logger = logging.getLogger(__name__)
 
 
 def setup_app() -> FastAPI:
+    with open("config.yaml") as f:
+        d = yaml.load(f, yaml.FullLoader)
+        logging.config.dictConfig(d)
+
     app = FastAPI(
         title="Hydration Tracker",
         description="API для отслеживания потребления воды",
@@ -36,12 +45,12 @@ def setup_app() -> FastAPI:
     app.include_router(users_router, prefix="/api/user", tags=["user"])
     app.include_router(records_router, prefix="/api/hydration", tags=["hydration"])
 
-    settings = AppSettings()
+    app_settings = AppSettings()
+    db = DatabaseManager(app_settings.db_url)
 
-    app.state.db_manager = DatabaseManager(settings.db_url)
-
-    app.state.user_service = HydrationService(HydrationRepository())
-    app.state.hydration_service = HydrationRecordService(HydrationRecordRepository())
+    app.state.db_manager = db
+    app.state.user_service = HydrationService(HydrationRepository(db))
+    app.state.hydration_service = HydrationRecordService(HydrationRecordRepository(db))
 
     return app
 
@@ -50,8 +59,10 @@ def setup_app() -> FastAPI:
 async def app_lifetime(app: FastAPI):
     db_manager = cast(DatabaseManager, app.state.db_manager)
 
+    logger.info("Starting app...")
     await db_manager.initialize()
-
+    logger.info("Started")
     yield
-
+    logger.info("Stopping app...")
     await db_manager.dispose()
+    logger.info("Stopped")
