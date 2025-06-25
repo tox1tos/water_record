@@ -1,15 +1,16 @@
-from datetime import date
+import datetime
 
 from pydantic import BaseModel
 
 
 class HydrationRecordBase(BaseModel):
-    date: date
+    date: datetime.date
     glasses: int
+    amount: int
 
 
 class HydrationRecordCreate(HydrationRecordBase):
-    pass
+    user_id: int
 
 
 class HydrationRecord(HydrationRecordBase):

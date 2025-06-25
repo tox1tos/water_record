@@ -117,3 +117,571 @@ CREATE TABLE hydration_records (
 [12:18:42] INFO root: My_message
 [12:18:42] INFO root: Information message
 [12:18:42] ERROR root: Some error
+[21:33:29] INFO my_app.setup.setup: Starting app...
+[21:33:29] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[21:33:29] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[21:33:29] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:33:29] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[21:33:29] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:33:29] INFO sqlalchemy.engine.Engine: COMMIT
+[21:33:29] INFO my_app.setup.setup: Started
+[21:58:21] INFO root: My_message
+[21:58:21] INFO root: Information message
+[21:58:21] ERROR root: Some error
+[22:01:55] INFO my_app.setup.setup: Starting app...
+[22:01:55] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:01:55] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:01:55] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:01:55] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:01:55] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:01:55] INFO sqlalchemy.engine.Engine: COMMIT
+[22:01:55] INFO my_app.setup.setup: Started
+[09:37:24] INFO my_app.setup.setup: Starting app...
+[09:37:24] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[09:37:24] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[09:37:24] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[09:37:24] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[09:37:24] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[09:37:24] INFO sqlalchemy.engine.Engine: COMMIT
+[09:37:24] INFO my_app.setup.setup: Started
+[10:01:56] INFO my_app.setup.setup: Stopping app...
+[10:01:56] INFO my_app.setup.setup: Stopped
+[10:01:56] INFO root: My_message
+[10:01:56] INFO root: Information message
+[10:01:56] ERROR root: Some error
+[18:11:47] INFO my_app.setup.setup: Starting app...
+[18:11:48] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[18:11:48] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[18:11:48] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[18:11:48] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[18:11:48] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[18:11:48] INFO sqlalchemy.engine.Engine: COMMIT
+[18:11:48] INFO my_app.setup.setup: Started
+[18:12:02] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[18:12:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[18:12:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+[18:12:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[18:12:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: PRAGMA temp.table_info("hydration_records")
+[18:12:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	username VARCHAR NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+[18:12:02] INFO sqlalchemy.engine.Engine: [no key 0.00487s] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: 
+CREATE TABLE hydration_records (
+	id INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	amount INTEGER NOT NULL, 
+	timestamp DATETIME, 
+	date DATE, 
+	glasses INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+[18:12:02] INFO sqlalchemy.engine.Engine: [no key 0.00293s] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: CREATE INDEX ix_hydration_records_date ON hydration_records (date)
+[18:12:02] INFO sqlalchemy.engine.Engine: [no key 0.00165s] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: CREATE INDEX ix_hydration_records_timestamp ON hydration_records (timestamp)
+[18:12:02] INFO sqlalchemy.engine.Engine: [no key 0.00161s] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: CREATE INDEX ix_hydration_records_id ON hydration_records (id)
+[18:12:02] INFO sqlalchemy.engine.Engine: [no key 0.00241s] ()
+[18:12:02] INFO sqlalchemy.engine.Engine: COMMIT
+[18:17:43] INFO my_app.setup.setup: Stopping app...
+[18:17:43] INFO my_app.setup.setup: Stopped
+[18:17:43] INFO root: My_message
+[18:17:43] INFO root: Information message
+[18:17:43] ERROR root: Some error
+[12:29:09] INFO my_app.setup.setup: Starting app...
+[12:29:09] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:29:09] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[12:29:09] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:29:09] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[12:29:09] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:29:09] INFO sqlalchemy.engine.Engine: COMMIT
+[12:29:09] INFO my_app.setup.setup: Started
+[12:29:45] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:29:45] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[12:29:45] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:29:45] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[12:29:45] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:29:45] INFO sqlalchemy.engine.Engine: COMMIT
+[12:33:44] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:33:44] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.date >= ? AND hydration_records.date <= ?
+[12:33:44] INFO sqlalchemy.engine.Engine: [generated in 0.00224s] ('2023-12-12', '2024-12-12')
+[12:33:44] INFO sqlalchemy.engine.Engine: ROLLBACK
+[12:34:10] INFO my_app.setup.setup: Stopping app...
+[12:34:10] INFO my_app.setup.setup: Stopped
+[12:51:39] INFO my_app.setup.setup: Starting app...
+[12:51:39] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:51:39] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[12:51:39] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:51:39] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[12:51:39] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:51:39] INFO sqlalchemy.engine.Engine: COMMIT
+[12:51:39] INFO my_app.setup.setup: Started
+[12:52:07] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[12:52:07] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[12:52:07] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:52:07] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[12:52:07] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[12:52:07] INFO sqlalchemy.engine.Engine: COMMIT
+[12:56:39] INFO my_app.setup.setup: Stopping app...
+[12:56:39] INFO my_app.setup.setup: Stopped
+[09:53:03] INFO my_app.setup.setup: Starting app...
+[09:53:03] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[09:53:03] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[09:53:03] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[09:53:03] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[09:53:03] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[09:53:03] INFO sqlalchemy.engine.Engine: COMMIT
+[09:53:03] INFO my_app.setup.setup: Started
+[09:54:19] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[09:54:19] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[09:54:19] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[09:54:19] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[09:54:19] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[09:54:19] INFO sqlalchemy.engine.Engine: COMMIT
+[10:04:33] INFO my_app.setup.setup: Stopping app...
+[10:04:33] INFO my_app.setup.setup: Stopped
+[10:32:00] INFO my_app.setup.setup: Starting app...
+[10:32:00] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[10:32:00] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[10:32:00] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:32:00] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[10:32:00] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:32:00] INFO sqlalchemy.engine.Engine: COMMIT
+[10:32:00] INFO my_app.setup.setup: Started
+[10:32:18] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[10:32:18] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[10:32:18] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:32:18] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[10:32:18] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:32:18] INFO sqlalchemy.engine.Engine: COMMIT
+[10:37:32] INFO my_app.setup.setup: Stopping app...
+[10:37:32] INFO my_app.setup.setup: Stopped
+[10:45:49] INFO my_app.setup.setup: Starting app...
+[10:45:49] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[10:45:49] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[10:45:49] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:45:49] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[10:45:49] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:45:49] INFO sqlalchemy.engine.Engine: COMMIT
+[10:45:49] INFO my_app.setup.setup: Started
+[10:46:35] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[10:46:35] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[10:46:35] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:46:35] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[10:46:35] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:46:35] INFO sqlalchemy.engine.Engine: COMMIT
+[10:52:32] INFO my_app.setup.setup: Stopping app...
+[10:52:32] INFO my_app.setup.setup: Stopped
+[10:59:13] INFO my_app.setup.setup: Starting app...
+[10:59:13] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[10:59:13] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[10:59:13] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:59:13] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[10:59:13] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:59:13] INFO sqlalchemy.engine.Engine: COMMIT
+[10:59:13] INFO my_app.setup.setup: Started
+[10:59:34] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[10:59:34] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[10:59:34] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:59:34] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[10:59:34] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[10:59:34] INFO sqlalchemy.engine.Engine: COMMIT
+[10:59:48] INFO my_app.setup.setup: Stopping app...
+[10:59:48] INFO my_app.setup.setup: Stopped
+[11:03:30] INFO my_app.setup.setup: Starting app...
+[11:03:30] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[11:03:30] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[11:03:30] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:03:30] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[11:03:30] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:03:30] INFO sqlalchemy.engine.Engine: COMMIT
+[11:03:30] INFO my_app.setup.setup: Started
+[11:04:05] INFO my_app.setup.setup: Starting app...
+[11:04:05] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[11:04:05] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[11:04:05] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:04:05] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[11:04:05] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:04:05] INFO sqlalchemy.engine.Engine: COMMIT
+[11:04:05] INFO my_app.setup.setup: Started
+[11:04:26] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[11:04:26] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[11:04:26] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:04:26] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[11:04:26] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:04:26] INFO sqlalchemy.engine.Engine: COMMIT
+[11:20:07] INFO my_app.setup.setup: Stopping app...
+[11:20:07] INFO my_app.setup.setup: Stopped
+[11:27:05] INFO my_app.setup.setup: Starting app...
+[11:27:05] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[11:27:05] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[11:27:05] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:27:05] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[11:27:05] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:27:05] INFO sqlalchemy.engine.Engine: COMMIT
+[11:27:05] INFO my_app.setup.setup: Started
+[11:27:25] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[11:27:25] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[11:27:25] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:27:25] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[11:27:25] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[11:27:25] INFO sqlalchemy.engine.Engine: COMMIT
+[11:32:17] INFO my_app.setup.setup: Stopping app...
+[11:32:17] INFO my_app.setup.setup: Stopped
+[19:10:39] INFO my_app.setup.setup: Starting app...
+[19:10:40] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[19:10:40] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[19:10:40] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:10:40] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[19:10:40] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:10:40] INFO sqlalchemy.engine.Engine: COMMIT
+[19:10:40] INFO my_app.setup.setup: Started
+[19:11:02] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[19:11:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[19:11:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:11:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[19:11:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:11:02] INFO sqlalchemy.engine.Engine: COMMIT
+[19:12:31] INFO my_app.setup.setup: Stopping app...
+[19:12:31] INFO my_app.setup.setup: Stopped
+[19:26:54] INFO my_app.setup.setup: Starting app...
+[19:26:54] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[19:26:54] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[19:26:54] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:26:54] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[19:26:54] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:26:54] INFO sqlalchemy.engine.Engine: COMMIT
+[19:26:54] INFO my_app.setup.setup: Started
+[19:27:11] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[19:27:11] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[19:27:11] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:27:11] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[19:27:11] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:27:11] INFO sqlalchemy.engine.Engine: COMMIT
+[19:34:15] INFO my_app.setup.setup: Stopping app...
+[19:34:15] INFO my_app.setup.setup: Stopped
+[19:35:05] INFO my_app.setup.setup: Starting app...
+[19:35:05] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[19:35:05] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[19:35:05] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:35:05] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[19:35:05] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[19:35:05] INFO sqlalchemy.engine.Engine: COMMIT
+[19:35:05] INFO my_app.setup.setup: Started
+[19:35:34] INFO my_app.setup.setup: Stopping app...
+[19:35:34] INFO my_app.setup.setup: Stopped
+[21:55:22] INFO my_app.setup.setup: Starting app...
+[21:55:22] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[21:55:22] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[21:55:22] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:55:22] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[21:55:22] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[21:55:22] INFO sqlalchemy.engine.Engine: COMMIT
+[21:55:22] INFO my_app.setup.setup: Started
+[22:20:44] INFO my_app.setup.setup: Stopping app...
+[22:20:44] INFO my_app.setup.setup: Stopped
+[22:20:54] INFO my_app.setup.setup: Starting app...
+[22:20:54] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:20:54] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:20:54] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:20:54] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:20:54] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:20:54] INFO sqlalchemy.engine.Engine: COMMIT
+[22:20:54] INFO my_app.setup.setup: Started
+[22:21:13] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:21:13] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:21:13] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:21:13] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:21:13] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:21:13] INFO sqlalchemy.engine.Engine: COMMIT
+[22:23:18] INFO my_app.setup.setup: Stopping app...
+[22:23:18] INFO my_app.setup.setup: Stopped
+[22:28:51] INFO my_app.setup.setup: Starting app...
+[22:28:51] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:28:51] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:28:51] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:28:51] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:28:51] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:28:51] INFO sqlalchemy.engine.Engine: COMMIT
+[22:28:51] INFO my_app.setup.setup: Started
+[22:29:16] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:29:16] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:29:16] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:29:16] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:29:16] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:29:16] INFO sqlalchemy.engine.Engine: COMMIT
+[22:32:34] INFO my_app.setup.setup: Stopping app...
+[22:32:34] INFO my_app.setup.setup: Stopped
+[22:37:11] INFO my_app.setup.setup: Starting app...
+[22:37:11] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:37:11] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:37:11] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:37:11] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:37:11] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:37:11] INFO sqlalchemy.engine.Engine: COMMIT
+[22:37:11] INFO my_app.setup.setup: Started
+[22:37:29] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:37:29] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:37:29] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:37:29] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:37:29] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:37:29] INFO sqlalchemy.engine.Engine: COMMIT
+[22:38:15] INFO my_app.setup.setup: Stopping app...
+[22:38:15] INFO my_app.setup.setup: Stopped
+[22:52:18] INFO my_app.setup.setup: Starting app...
+[22:52:18] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:52:18] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:52:18] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:52:18] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:52:18] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:52:18] INFO sqlalchemy.engine.Engine: COMMIT
+[22:52:18] INFO my_app.setup.setup: Started
+[22:52:30] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:52:30] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[22:52:30] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:52:30] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[22:52:30] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[22:52:30] INFO sqlalchemy.engine.Engine: COMMIT
+[22:52:30] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:52:30] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[22:52:30] INFO sqlalchemy.engine.Engine: [generated in 0.00221s] (0, 0, '2025-06-25 18:52:30.488759', '2025-06-25', 0)
+[22:52:30] INFO sqlalchemy.engine.Engine: COMMIT
+[22:52:30] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:52:30] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.id = ?
+[22:52:30] INFO sqlalchemy.engine.Engine: [generated in 0.00240s] (1,)
+[22:52:30] INFO sqlalchemy.engine.Engine: COMMIT
+[22:58:20] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[22:58:20] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.user_id = ? AND hydration_records.timestamp BETWEEN ? AND ? ORDER BY hydration_records.timestamp
+[22:58:20] INFO sqlalchemy.engine.Engine: [generated in 0.00320s] (180, '2024-12-12 00:00:00.000000', '2025-12-12 00:00:00.000000')
+[22:58:20] INFO sqlalchemy.engine.Engine: COMMIT
+[23:05:19] INFO my_app.setup.setup: Stopping app...
+[23:05:19] INFO my_app.setup.setup: Stopped
+[00:18:58] INFO my_app.setup.setup: Starting app...
+[00:18:58] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:18:58] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:18:58] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:18:58] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:18:58] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:18:58] INFO sqlalchemy.engine.Engine: COMMIT
+[00:18:58] INFO my_app.setup.setup: Started
+[00:19:15] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:19:15] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:19:15] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:19:15] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:19:15] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:19:15] INFO sqlalchemy.engine.Engine: COMMIT
+[00:20:46] INFO my_app.setup.setup: Stopping app...
+[00:20:46] INFO my_app.setup.setup: Stopped
+[00:26:48] INFO my_app.setup.setup: Starting app...
+[00:26:48] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:26:48] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:26:48] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:26:48] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:26:48] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:26:48] INFO sqlalchemy.engine.Engine: COMMIT
+[00:26:48] INFO my_app.setup.setup: Started
+[00:27:12] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:27:12] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:27:12] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:27:12] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:27:12] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:27:12] INFO sqlalchemy.engine.Engine: COMMIT
+[00:27:12] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:27:12] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:27:12] INFO sqlalchemy.engine.Engine: [generated in 0.00195s] (0, 0, '2025-06-25 20:27:12.230803', '2025-06-25', 0)
+[00:27:12] INFO sqlalchemy.engine.Engine: COMMIT
+[00:27:12] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:27:12] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.id = ?
+[00:27:12] INFO sqlalchemy.engine.Engine: [generated in 0.00398s] (2,)
+[00:27:12] INFO sqlalchemy.engine.Engine: COMMIT
+[00:27:21] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:27:21] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:27:21] INFO sqlalchemy.engine.Engine: [generated in 0.00389s] (None, None, '2025-06-25 20:27:21.242158', '2025-06-25', 0)
+[00:27:21] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:27:37] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:27:37] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:27:37] INFO sqlalchemy.engine.Engine: [cached since 16.38s ago] (None, None, '2025-06-25 20:27:37.619364', '2025-06-25', 2)
+[00:27:37] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:27:40] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:27:40] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:27:40] INFO sqlalchemy.engine.Engine: [cached since 18.95s ago] (None, None, '2025-06-25 20:27:40.195110', '2025-06-25', 2)
+[00:27:40] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:28:18] INFO my_app.setup.setup: Stopping app...
+[00:28:18] INFO my_app.setup.setup: Stopped
+[00:28:26] INFO my_app.setup.setup: Starting app...
+[00:28:26] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:28:26] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:28:26] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:28:26] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:28:26] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:28:26] INFO sqlalchemy.engine.Engine: COMMIT
+[00:28:26] INFO my_app.setup.setup: Started
+[00:28:31] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:28:31] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:28:31] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:28:31] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:28:31] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:28:31] INFO sqlalchemy.engine.Engine: COMMIT
+[00:28:31] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:28:31] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:28:31] INFO sqlalchemy.engine.Engine: [generated in 0.00232s] (None, None, '2025-06-25 20:28:31.143918', '2025-06-25', 2)
+[00:28:31] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:29:39] INFO my_app.setup.setup: Stopping app...
+[00:29:39] INFO my_app.setup.setup: Stopped
+[00:39:25] INFO my_app.setup.setup: Starting app...
+[00:39:25] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:39:25] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:39:25] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:39:25] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:39:25] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:39:25] INFO sqlalchemy.engine.Engine: COMMIT
+[00:39:25] INFO my_app.setup.setup: Started
+[00:39:39] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:39:39] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:39:39] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:39:39] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:39:39] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:39:39] INFO sqlalchemy.engine.Engine: COMMIT
+[00:39:39] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:39:39] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:39:39] INFO sqlalchemy.engine.Engine: [generated in 0.00265s] (0, None, '2025-06-25 20:39:39.805032', '2025-06-25', 0)
+[00:39:39] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:39:47] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:39:47] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:39:47] INFO sqlalchemy.engine.Engine: [cached since 7.638s ago] (16, None, '2025-06-25 20:39:47.440716', '2025-06-25', 2)
+[00:39:47] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:42:00] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:42:00] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:42:00] INFO sqlalchemy.engine.Engine: [cached since 140.7s ago] (16, None, '2025-06-25 20:42:00.501547', '2025-06-25', 2)
+[00:42:00] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:42:24] INFO my_app.setup.setup: Stopping app...
+[00:42:24] INFO my_app.setup.setup: Stopped
+[00:50:13] INFO my_app.setup.setup: Starting app...
+[00:50:13] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:50:13] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:50:13] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:50:13] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:50:13] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:50:13] INFO sqlalchemy.engine.Engine: COMMIT
+[00:50:13] INFO my_app.setup.setup: Started
+[00:50:52] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:50:52] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[00:50:52] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:50:52] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[00:50:52] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[00:50:52] INFO sqlalchemy.engine.Engine: COMMIT
+[00:50:52] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[00:50:52] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[00:50:52] INFO sqlalchemy.engine.Engine: [generated in 0.00305s] (10, None, '2025-06-25 20:50:52.829208', '2025-06-25', 2)
+[00:50:52] INFO sqlalchemy.engine.Engine: ROLLBACK
+[00:54:26] INFO my_app.setup.setup: Stopping app...
+[00:54:26] INFO my_app.setup.setup: Stopped
+[01:12:07] INFO my_app.setup.setup: Starting app...
+[01:12:07] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:12:07] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[01:12:07] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:12:07] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[01:12:07] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:12:07] INFO sqlalchemy.engine.Engine: COMMIT
+[01:12:07] INFO my_app.setup.setup: Started
+[01:12:32] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:12:32] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[01:12:32] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:12:32] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[01:12:32] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:12:32] INFO sqlalchemy.engine.Engine: COMMIT
+[01:12:32] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:12:32] INFO sqlalchemy.engine.Engine: INSERT INTO hydration_records (user_id, amount, timestamp, date, glasses) VALUES (?, ?, ?, ?, ?)
+[01:12:32] INFO sqlalchemy.engine.Engine: [generated in 0.00138s] (120, 10, '2025-06-25 21:12:32.847459', '2025-06-25', 2)
+[01:12:32] INFO sqlalchemy.engine.Engine: COMMIT
+[01:12:32] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:12:32] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.id = ?
+[01:12:32] INFO sqlalchemy.engine.Engine: [generated in 0.00286s] (3,)
+[01:12:32] INFO sqlalchemy.engine.Engine: COMMIT
+[01:15:52] INFO my_app.setup.setup: Stopping app...
+[01:15:52] INFO my_app.setup.setup: Stopped
+[01:18:43] INFO my_app.setup.setup: Starting app...
+[01:18:43] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:18:43] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[01:18:43] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:18:43] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[01:18:43] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:18:43] INFO sqlalchemy.engine.Engine: COMMIT
+[01:18:43] INFO my_app.setup.setup: Started
+[01:18:59] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:18:59] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[01:18:59] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:18:59] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[01:18:59] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:18:59] INFO sqlalchemy.engine.Engine: COMMIT
+[01:18:59] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:18:59] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.date >= ? AND hydration_records.date <= ?
+[01:18:59] INFO sqlalchemy.engine.Engine: [generated in 0.00231s] ('2023-12-12', '2024-12-12')
+[01:18:59] INFO sqlalchemy.engine.Engine: ROLLBACK
+[01:20:49] INFO my_app.setup.setup: Stopping app...
+[01:20:49] INFO my_app.setup.setup: Stopped
+[01:21:02] INFO my_app.setup.setup: Starting app...
+[01:21:02] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:21:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[01:21:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:21:02] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[01:21:02] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:21:02] INFO sqlalchemy.engine.Engine: COMMIT
+[01:21:02] INFO my_app.setup.setup: Started
+[01:21:17] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:21:17] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+[01:21:17] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:21:17] INFO sqlalchemy.engine.Engine: PRAGMA main.table_info("hydration_records")
+[01:21:17] INFO sqlalchemy.engine.Engine: [raw sql] ()
+[01:21:17] INFO sqlalchemy.engine.Engine: COMMIT
+[01:21:17] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:21:17] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.date >= ? AND hydration_records.date <= ?
+[01:21:17] INFO sqlalchemy.engine.Engine: [generated in 0.00185s] ('2023-12-12', '2024-12-12')
+[01:21:17] INFO sqlalchemy.engine.Engine: ROLLBACK
+[01:22:21] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:22:21] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.date >= ? AND hydration_records.date <= ?
+[01:22:21] INFO sqlalchemy.engine.Engine: [cached since 63.74s ago] ('2023-12-12', '2023-12-12')
+[01:22:21] INFO sqlalchemy.engine.Engine: COMMIT
+[01:22:40] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:22:40] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.date >= ? AND hydration_records.date <= ?
+[01:22:40] INFO sqlalchemy.engine.Engine: [cached since 82.37s ago] ('2023-12-12', '2024-12-12')
+[01:22:40] INFO sqlalchemy.engine.Engine: COMMIT
+[01:26:16] INFO sqlalchemy.engine.Engine: BEGIN (implicit)
+[01:26:16] INFO sqlalchemy.engine.Engine: SELECT hydration_records.id, hydration_records.user_id, hydration_records.amount, hydration_records.timestamp, hydration_records.date, hydration_records.glasses 
+FROM hydration_records 
+WHERE hydration_records.user_id = ? AND hydration_records.timestamp BETWEEN ? AND ? ORDER BY hydration_records.timestamp
+[01:26:16] INFO sqlalchemy.engine.Engine: [generated in 0.00187s] (1234, '2023-12-12 00:00:00.000000', '2024-12-12 00:00:00.000000')
+[01:26:16] INFO sqlalchemy.engine.Engine: COMMIT
+[01:29:54] INFO my_app.setup.setup: Stopping app...
+[01:29:54] INFO my_app.setup.setup: Stopped
