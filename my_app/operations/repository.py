@@ -11,7 +11,7 @@ class HydrationRecordRepository:
         self.db_manager = db_manager
 
     async def create_record(self, user_id: int, amount: int) -> HydrationRecord:
-        session = self.db_manager  # <- просто используй её как есть
+        session = self.db_manager
 
         now = datetime.utcnow()
         glasses = amount // 250
